@@ -1,0 +1,44 @@
+@font-face 
+  font-family: OpenSans
+  src: url('Fonts\Open_Sans\static\OpenSans-Regular.ttf')
+
+@font-face 
+  font-family: Lora
+  src: url('Fonts\Lora\static\Lora-Regular.ttf')
+
+  
+li,h1,h2,h3,h4,h5
+  font-family: OpenSans
+
+p
+  font-family: Lora
+
+.imgCommentaire
+  width: 5%
+  height: 5%
+  object-fit: cover
+  border: 1px solid black
+
+
+article
+  background-color: #EEEEEE
+  width: 25%
+  margin: 4%
+
+.blog
+  background-color: #393E46
+
+.bottom 
+    background-color: #EEEEEE
+
+@media screen and (max-width: 768px)
+  .blog
+    flex-direction: column
+  
+  article
+    width: 80%
+    margin: 5% auto
+
+  ul
+    img
+      max-width: 25% 
