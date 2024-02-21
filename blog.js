@@ -41,42 +41,35 @@ function GeneratePage(){
 }
 
 GeneratePage()
+$("#btnAjouter").click(CreateNewComment)
 
 
-let d = new Date()
+function test(){
 
-let date = `${d.getFullYear()}-${d.getMonth()}-${d.getDay()}`
-
-console.log(date)
+    console.log(contenu)
+}
 
 
 function CreateNewComment(){
 
     let urlParams = new URLSearchParams(window.location.search);
     let articleId = urlParams.get('id');
-    let d = new Date()
-    $.post(JSON.stringify(
 
-    ))
+    let d = new Date()
     let date = `${d.getFullYear()}-${d.getMonth()}-${d.getDay()}`
 
-    fetch(`http://localhost:3000/Commentaires?Article=${articleId}`,
-    {
-        method: "POST",
-        body: JSON.stringify({
-            Article: articleId,
-            Date: date,
-            Contenu: "Cet article a suscité en moi de nouvelles idées. Merci pour l'inspiration !"
-        })
+    let contenu = $("#txtCommentaire").val()
 
+    let data = JSON.stringify({
+        Article: articleId,
+        Date: date,
+        Contenu: contenu
+    })
 
+    $.post(`http://localhost:3000/Commentaires`,data, function(){
+        console.log("Commentaire ajouter")
+    })
 
-
-
-
-    }
-      
-    )
 }
 
 
