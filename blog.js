@@ -5,7 +5,7 @@ function GetArticleID(){
 
 }
 async function GenerateContent(articleId){
-    let publication =await fetch(`http://localhost:3000/Publications?ID=${articleId}`)
+    let publication =await fetch(`http://localhost:3000/Publications?id=${articleId}`)
     .then(response => response.json())
     .then(json => {return json[0];})
 
@@ -35,6 +35,7 @@ function CreateComment(comment){
     $(".Commentaires").append(newComment)
 }
 function GeneratePage(){
+    $("#txtCommentaire").val("")
     let id = GetArticleID()
     GenerateContent(id)
     GetComments(id)
